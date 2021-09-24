@@ -1,0 +1,60 @@
+{
+  "name": "OneSpan Library",
+  "description": "Contains common Workflows needed for interaction with OneSpan website.\r\n- Created by Matthew L. (A72352)",
+  "main": "NewActivity.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "2.9.3",
+    "UiPath.Mail.Activities": "1.9.3",
+    "UiPath.PDF.Activities": "3.3.0",
+    "UiPath.System.Activities": "20.10.1",
+    "UiPath.UIAutomation.Activities": "20.10.6"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.10.2.0",
+  "projectVersion": "1.7.13",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Library",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": [
+        "FileHandler.xaml",
+        "ProcessPDF.xaml",
+        "KillProcess.xaml",
+        "ProcessPDF-EMP-Wages.xaml",
+        "ProcessPDF-IW-Wages.xaml",
+        "AdobePopup.xaml",
+        "ProcessAttachment.xaml",
+        "testAttachment.xaml",
+        "testPrimaryForm.xaml",
+        "testClean.xaml",
+        "DebugGetMode.xaml",
+        "testScreenshot.xaml"
+      ]
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": true
+  },
+  "expressionLanguage": "VisualBasic",
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {}
+}
