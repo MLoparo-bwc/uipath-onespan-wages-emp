@@ -363,7 +363,7 @@
                                 </Sequence>
                               </ui:CommentOut.Body>
                             </ui:CommentOut>
-                            <ui:CloseApplication DisplayName="Close Application 'acrord32.exe RPA'" sap:VirtualizedContainerService.HintSize="571,106" sap2010:WorkflowViewState.IdRef="CloseApplication_3">
+                            <ui:CloseApplication ContinueOnError="True" DisplayName="Close Application 'acrord32.exe RPA'" sap:VirtualizedContainerService.HintSize="571,106" sap2010:WorkflowViewState.IdRef="CloseApplication_3">
                               <ui:CloseApplication.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8acb23f-3431-4d2f-ab38-ca66ccc73c28" InformativeScreenshot="4f8b0441030d99adfbc766481065324e" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" />
                               </ui:CloseApplication.Target>
@@ -404,7 +404,7 @@
                               </scg:List>
                             </ui:MultipleAssign.AssignOperations>
                           </ui:MultipleAssign>
-                          <ui:CloseApplication DisplayName="Close Application 'explorer.exe Computer'" sap:VirtualizedContainerService.HintSize="613,106" sap2010:WorkflowViewState.IdRef="CloseApplication_4">
+                          <ui:CloseApplication ContinueOnError="True" DisplayName="Close Application 'explorer.exe Computer'" sap:VirtualizedContainerService.HintSize="613,106" sap2010:WorkflowViewState.IdRef="CloseApplication_4">
                             <ui:CloseApplication.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c03935f3-02ff-4e6c-8595-f2d10f0598f4" InformativeScreenshot="b0cfd96d51084447ffc19381eefe8c40" Selector="&lt;wnd app='explorer.exe' cls='CabinetWClass' omit:title='Computer M180807' /&gt;" TimeoutMS="1000" WaitForReady="INTERACTIVE" />
                             </ui:CloseApplication.Target>
@@ -440,12 +440,8 @@
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Unknown error in ProcessPDF.xaml&quot;]" />
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DebugSendMsg workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="DebugSendMsg.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_DebugMsg">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Catch: (Step &quot; + TraceErr.ToString + &quot;):  Unable to process PDF --&gt; &quot; + exception.Source.ToString + &quot;: &quot; + exception.Message.ToString" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_DebugWorkflow">
-                    <Literal x:TypeArguments="x:String">ProcessPDF</Literal>
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_DebugMsg" xml:space="preserve">["Catch: (Step " + TraceErr.ToString + "):  Unable to process PDF --&gt; " + exception.Source.ToString + ": " + exception.Message.ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_DebugWorkflow">ProcessPDF</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>

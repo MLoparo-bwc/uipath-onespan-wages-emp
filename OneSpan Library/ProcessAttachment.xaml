@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1204,3609</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1182,3609</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AttachmentHandler_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -297,19 +297,15 @@
               </ActivityAction>
             </ui:ForEach.Body>
           </ui:ForEach>
-          <ui:CloseApplication DisplayName="Close Application 'explorer.exe Computer'" sap:VirtualizedContainerService.HintSize="691,106" sap2010:WorkflowViewState.IdRef="CloseApplication_2">
+          <ui:CloseApplication ContinueOnError="True" DisplayName="Close Application 'explorer.exe Computer'" sap:VirtualizedContainerService.HintSize="691,106" sap2010:WorkflowViewState.IdRef="CloseApplication_2">
             <ui:CloseApplication.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c03935f3-02ff-4e6c-8595-f2d10f0598f4" InformativeScreenshot="b0cfd96d51084447ffc19381eefe8c40" Selector="&lt;wnd app='explorer.exe' cls='CabinetWClass' omit:title='Computer M180807' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" />
             </ui:CloseApplication.Target>
           </ui:CloseApplication>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DebugSendMsg workflow" sap:VirtualizedContainerService.HintSize="691,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="DebugSendMsg.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_DebugMsg">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;For this e-mail, processed &quot; + Attachment.Count.ToString + &quot; Attachments&quot;" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_DebugWorkflow">
-                <Literal x:TypeArguments="x:String">ProcessAttachment</Literal>
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_DebugMsg">["For this e-mail, processed " + MyAttachment.Count.ToString + " Attachments"]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_DebugWorkflow">ProcessAttachment</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
